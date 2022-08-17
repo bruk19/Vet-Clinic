@@ -28,4 +28,7 @@ SELECT *
 FROM animals
 WHERE neutered=TRUE;
 
-
+-- Find all animals not named Gabumon.
+SELECT *
+FROM animals
+WHERE name!='Gabumon';
