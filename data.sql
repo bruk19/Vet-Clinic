@@ -60,3 +60,8 @@ VALUES
 UPDATE animals
 SET species_id = 2
 WHERE name LIKE '%mon';
+
+-- modify inserted animals it includes species_id the other lefts
+UPDATE animals
+SET species_id = 1
+WHERE species_id IS NULL;
