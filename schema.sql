@@ -24,3 +24,6 @@ CREATE TABLE species(
     name VARCHAR NOT NULL,
     PRIMARY KEY (id)
 );
+
+-- Make sure that id is set as autoincremented PRIMAY KEY
+ALTER TABLE animals ADD PRIMARY KEY (id);
