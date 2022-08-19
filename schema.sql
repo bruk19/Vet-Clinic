@@ -31,3 +31,5 @@ ALTER TABLE animals ADD PRIMARY KEY (id);
 -- Edit the animals table to drop the species column.
 ALTER TABLE animals DROP COLUMN species;
 
+--Add column species_id which is a foreign key refencing species table
+ ALTER TABLE animals ADD COLUMN species_id INT REFERENCES species(id);
