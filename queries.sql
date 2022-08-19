@@ -133,3 +133,10 @@ FROM animals
   JOIN owners ON animals.owner_id = owners.id
 WHERE owners.full_name = 'Melody Pond';
 --=>(0 rows)
+
+--2.List of all animals that are pokemon (their type is Pokemon).
+SELECT name
+FROM animals
+  JOIN species ON animals.species_id = species.id
+WHERE species.name = 'pokemon';
+--=> (Squirtle,Charmander,Blossom,Pikachu,Ditto(5 rows))
