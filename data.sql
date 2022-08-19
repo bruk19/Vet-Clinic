@@ -46,3 +46,12 @@ VALUES
     ('Melody Pond', 77),
     ('Dean Wincheste', 14),
     ('Jodie Whittaker', 38);
+
+-- Instert new data into species table.
+INSERT INTO
+    species(
+        name
+    )
+VALUES
+    ('Pokemon'),
+    ('Digimon');
