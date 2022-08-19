@@ -125,3 +125,11 @@ FROM animals
 WHERE date_of_birth 
 BETWEEN '01/01/1990' AND '31/12/2000'
 GROUP BY species;
+
+-- Answer some questions using JOIN.
+-- 1. What animals belong to Melody Pond? 
+SELECT name
+FROM animals
+  JOIN owners ON animals.owner_id = owners.id
+WHERE owners.full_name = 'Melody Pond';
+--=>(0 rows)
