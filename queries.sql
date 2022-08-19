@@ -161,3 +161,9 @@ SELECT animals.name
 FROM animals
   JOIN owners ON animals.owner_id = owners.id
 WHERE owners.full_name = 'Jennifer Orwell';
+
+--6.List all animals owned by Dean Winchester that haven't tried to escape.
+SELECT animals.name
+FROM animals
+  JOIN owners ON animals.owner_id = owners.id
+WHERE owners.full_name = 'Dean Wicheste' AND animals.escape_attempts = 0;
