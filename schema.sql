@@ -9,3 +9,11 @@ CREATE TABLE animals(
     weight_kg DECIMAL,
     species VARCHAR
 );
+
+--  Create a table to store owners.
+CREATE TABLE owners(
+    id INT GENERATED ALWAYS AS IDENTITY NOT NULL,
+    full_name VARCHAR NOT NULL,
+    age INT NOT NULL,
+    PRIMARY KEY (id)
+)
