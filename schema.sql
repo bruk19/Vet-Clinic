@@ -27,3 +27,7 @@ CREATE TABLE species(
 
 -- Make sure that id is set as autoincremented PRIMAY KEY
 ALTER TABLE animals ADD PRIMARY KEY (id);
+
+-- Edit the animals table to drop the species column.
+ALTER TABLE animals DROP COLUMN species;
+
