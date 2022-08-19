@@ -140,3 +140,8 @@ FROM animals
   JOIN species ON animals.species_id = species.id
 WHERE species.name = 'pokemon';
 --=> (Squirtle,Charmander,Blossom,Pikachu,Ditto(5 rows))
+
+--3.List all owners and their animals, remember to include those that don't own any animal.
+SELECT owners.full_name,animals.name
+FROM owners
+  LEFT JOIN animals ON owners.id = animals.owner_id;
