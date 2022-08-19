@@ -55,3 +55,8 @@ INSERT INTO
 VALUES
     ('Pokemon'),
     ('Digimon');
+
+-- modify inserted animals it includes species_id with ends in 'mon' values
+UPDATE animals
+SET species_id = 2
+WHERE name LIKE '%mon';
