@@ -264,3 +264,24 @@ WHERE
             vets.name = 'Maisy Smith'
     );
 -- => Boarmon
+
+-- 7. Details for most recent visit: animal information, vet information, and date of visit.
+SELECT
+    animals.name as "Anmal's_name",
+    animals.date_of_birth as date_of_birth_of_animal,
+    vets.name as Vet_name,
+    species.name as Species,
+    visits.date_of_visit as Date_of_visit
+FROM
+    animals
+    JOIN visits ON animals.id = visits.animal_id
+    JOIN vets ON vets.id = visits.vet_id
+    JOIN species on species.id = animals.species_id
+WHERE
+    Date_of_visit = (
+        SELECT
+            MAX(Date_of_visit)
+        FROM
+            visits
+            JOIN vets ON vets.id = visits.vet_id
+    );
