@@ -81,3 +81,11 @@ VALUES
     ('Maisy Smith', 26, '17/01/2019'),
     ('Stephanie Mendez', 64, '04/05/1981'),
     ('Jack Harkness', 38, '08/06/2008');
+
+-- Insert new data into specialization table.
+INSERT INTO
+    specialization(vet_id, species_id)
+VALUES
+    (1, 1),
+    (3, 1),
+    (4, 2);
