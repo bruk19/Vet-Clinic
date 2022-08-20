@@ -296,3 +296,21 @@ FROM
 where
     specialization.vet_id is null;
 -- => 9;
+
+-- 9. What specialty should Maisy Smith consider getting? Look for the species she gets the most.
+SELECT
+    species.name AS "Species name",
+    COUNT(*)
+FROM
+    animals
+    JOIN visits on visits.animal_id = animals.id
+    JOIN vets on vets.id = visits.vet_id
+    JOIN species on species.id = animals.species_id
+WHERE
+    vets.name = 'Maisy Smith'
+GROUP by
+    species.name
+ORDER BY
+    count DESC
+lIMIT 1;
+-- => Digimon
