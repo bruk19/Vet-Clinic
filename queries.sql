@@ -219,3 +219,15 @@ FROM
     LEFT JOIN species ON species.id = specialization.species_id
 ORDER BY
     vets.id;
+
+-- 4.List all animals that visited Stephanie Mendez between April 1st and August 30th, 2020.
+-- => Agumon and Blossom
+SELECT animals.name
+FROM
+    animals
+    JOIN visits ON animals.id = visits.animal_id
+    JOIN vets ON vets.id = visits.vet_id
+WHERE
+    vets.name = 'Stephanie Mendez'
+    AND visits.date_of_visit BETWEEN '01/04/2020'
+    AND '30/08/2020';
