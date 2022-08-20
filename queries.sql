@@ -208,3 +208,14 @@ FROM
 WHERE
     vets.name = 'Stephanie Mendez';
 -- => 4;
+
+-- 3. List all vets and their specialties, including vets with no specialties.
+SELECT
+    vets.name,
+    species.name
+FROM
+    vets
+    LEFT JOIN specialization ON vets.id = specialization.vet_id
+    LEFT JOIN species ON species.id = specialization.species_id
+ORDER BY
+    vets.id;
