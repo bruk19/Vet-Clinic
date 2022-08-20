@@ -285,3 +285,14 @@ WHERE
             visits
             JOIN vets ON vets.id = visits.vet_id
     );
+
+-- 8. How many visits were with a vet that did not specialize in that animal's species?
+SELECT
+    count(vets.name)
+FROM
+    vets FULL
+    JOIN specialization ON specialization.vet_id = vets.id FULL
+    JOIN visits ON visits.vet_id = vets.id
+where
+    specialization.vet_id is null;
+-- => 9;
