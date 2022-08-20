@@ -178,7 +178,6 @@ FROM
 GROUP BY
   owner_full_name;
 
-
 --Write queries to answer the following: 
 -- 1. Who was the last animal seen by William Tatcher?
 SELECT animals.name
