@@ -177,3 +177,24 @@ FROM
   LEFT JOIN animals ON owners.id = animals.owner_id
 GROUP BY
   owner_full_name;
+
+
+--Write queries to answer the following: 
+-- 1. Who was the last animal seen by William Tatcher?
+SELECT animals.name
+FROM
+    animals
+    JOIN visits ON animals.id = visits.animal_id
+    JOIN vets ON vets.id = visits.vet_id
+WHERE
+    vets.name = 'William Tatcher'
+    AND visits.date_of_visit = (
+        SELECT
+            MAX(visits.date_of_visit)
+        FROM
+            visits
+            JOIN vets ON vets.id = visits.vet_id
+        WHERE
+            vets.name = 'William Tatcher'
+    );
+-- => Blossom
