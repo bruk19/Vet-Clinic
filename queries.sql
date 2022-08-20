@@ -231,3 +231,16 @@ WHERE
     vets.name = 'Stephanie Mendez'
     AND visits.date_of_visit BETWEEN '01/04/2020'
     AND '30/08/2020';
+
+-- 5. What animal has the most visits to vets?
+SELECT
+    animals.name,
+    COUNT(animals.name) AS total_visits
+FROM
+    animals
+    LEFT JOIN visits ON animals.id = visits.animal_id
+GROUP BY
+    animals.name
+ORDER BY
+    total_visits DESC;
+-- => Boarmon
