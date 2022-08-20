@@ -198,3 +198,13 @@ WHERE
             vets.name = 'William Tatcher'
     );
 -- => Blossom
+
+-- 2. How many different animals did Stephanie Mendez see?
+SELECT DISTINCT COUNT(animals.name)
+FROM
+    animals
+    JOIN visits ON animals.id = visits.animal_id
+    JOIN vets ON vets.id = visits.vet_id
+WHERE
+    vets.name = 'Stephanie Mendez';
+-- => 4;
