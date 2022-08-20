@@ -36,3 +36,12 @@ ALTER TABLE animals DROP COLUMN species;
 
  --Add column owner_id which is a foreign key refencing species table
  ALTER TABLE animals ADD COLUMN owner_id INT REFERENCES owners(id);
+
+ -- Create the vets to store vets.
+CREATE TABLE vets(
+    id INT GENERATED ALWAYS AS IDENTITY NOT NULL,
+    name VARCHAR NOT NULL,
+    age INT NOT NULL,
+    date_fo_graduation DATE,
+    PRIMARY KEY (id)
+);
