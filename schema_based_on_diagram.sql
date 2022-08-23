@@ -4,3 +4,11 @@ CREATE TABLE patient (
     name VARCHAR,
     date_of_birth DATE
 );
+
+-- creata table called medical histories.
+CREATE TABLE medical_histories (
+    id int GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    admited_at timestamp NOT NULL,
+    patient_id INT NOT NULL,
+    status VARCHAR NOT NULL
+);
