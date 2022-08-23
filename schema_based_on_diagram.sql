@@ -39,3 +39,10 @@ CREATE TABLE invoice_items (
     treatment_id INT NOT NULL,
     foreign key (invoice_id) references invoice(id)
 );
+
+-- creta table named treatments.
+CREATE TABLE treatments (
+    id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    type VARCHAR NOT NULL,
+    name VARCHAR NOT NULL
+);
