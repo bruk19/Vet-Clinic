@@ -12,3 +12,9 @@ CREATE TABLE medical_histories (
     patient_id INT NOT NULL,
     status VARCHAR NOT NULL
 );
+
+-- alter table medical_histories add foreign key patient_id to patient.id.
+ALTER TABLE
+    medical_histories
+ADD
+    CONSTRAINT FK_patient_id FOREIGN KEY (patient_id) REFERENCES patient(id);
